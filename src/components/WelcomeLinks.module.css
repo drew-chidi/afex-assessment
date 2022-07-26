@@ -1,0 +1,29 @@
+.linkContainer {
+  text-align: center;
+}
+
+.linkContainer button {
+  width: 100%;
+  height: 30px;
+}
+.linkContainer h1 {
+  font-size: 1rem;
+}
+
+.linkContainer p {
+  margin-bottom: 20px;
+}
+
+.signinButton {
+  color: white;
+  background-color: green;
+}
+.signupButton {
+  color: white;
+  background-color: black;
+}
+@media (min-width: 768px) {
+  .linkContainer button {
+    height: 46px;
+  }
+}

@@ -1,0 +1,19 @@
+.verifyContainer {
+  padding: 38px 0 0 0;
+}
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  background-color: transparent;
+}
+.buttonGroup a {
+  background-color: transparent;
+}
+.backButton a {
+  color: black;
+}
+.finishButton a {
+  color: #d71e0e;
+}

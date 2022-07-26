@@ -1,0 +1,49 @@
+.container {
+  background-color: #e5e5e5;
+  padding: 30px;
+}
+.container .selectCategory {
+  text-align: left;
+  margin: 40px 0 10px 0;
+}
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.buttonGroup button {
+  width: 50%;
+  height: 52px;
+}
+
+.button {
+  color: black;
+  border: 1px#E8ECEF solid;
+  background-color: white;
+}
+
+.active {
+  background-color: black;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 48px;
+  }
+  .container .selectCategory {
+    margin: 50px 0 14px 0;
+  }
+  .buttonGroup {
+    justify-content: flex-start;
+  }
+  .buttonGroup button {
+    margin-right: 10px;
+    width: 146px;
+    height: 52px;
+  }
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 1280px) {
+}

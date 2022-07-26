@@ -1,0 +1,17 @@
+.authselectContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 22px 0;
+}
+.selectInput {
+  border: 1px#E8ECEF solid;
+  padding: 14px;
+  width: 100%;
+}
+::placeholder {
+  color: #98a9bc;
+}
+label {
+  margin-bottom: 14px;
+}

@@ -1,0 +1,52 @@
+.cardContainer {
+  background-color: #e5e5e5;
+  padding: 56px;
+}
+
+.cardBox {
+  background-color: white;
+  padding: 10px;
+  /* width: 100%; */
+  margin-bottom: 71px;
+}
+
+@media (min-width: 425px) {
+  .cardBox {
+    padding: 28px;
+  }
+}
+@media (min-width: 768px) {
+  .cardBox {
+    padding: 56px;
+  }
+  .cardContainer {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+@media (min-width: 1024px) {
+  .cardBox {
+    /* padding-left: 256px;
+    padding-right: 256px; */
+  }
+  .cardContainer {
+    padding-left: 256px;
+    padding-right: 256px;
+  }
+}
+@media (min-width: 1280px) {
+  /* .cardBox {
+    padding: 51px 443px;
+  } */
+  .cardContainer {
+    padding: 0 300px;
+    /* padding-left: 300px;
+    padding-right: 300px; */
+  }
+}
+@media (min-width: 1440px) {
+  .cardContainer {
+    padding-left: 442px;
+    padding-right: 442px;
+  }
+}

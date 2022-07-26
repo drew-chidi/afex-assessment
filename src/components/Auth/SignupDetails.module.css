@@ -1,0 +1,25 @@
+.detailsContainer {
+  padding: 38px 0 0 0;
+}
+.phoneGroup {
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.phoneGroup input {
+  border: 1px#E8ECEF solid;
+  padding: 14px;
+  width: 100%;
+}
+.phoneGroup div:nth-child(1) {
+  width: 52px;
+}
+.phoneGroup select {
+  /* width: 52px; */
+  color: #98a9bc;
+  border: 1px#E8ECEF solid;
+}
+
+.formButton a {
+  color: #d71e0e;
+}
