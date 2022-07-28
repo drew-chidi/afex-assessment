@@ -1,0 +1,34 @@
+.container {
+  /* background-color: white; */
+  display: grid;
+  /* grid-template-columns: 40px 50px auto; */
+  grid-template-rows: 10% auto 10px;
+}
+.headerBox {
+  background-color: white;
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.headerBox nav {
+  display: flex;
+  column-gap: 15px;
+  border-right: 1px solid #d6d6d6;
+  border-left: 1px solid #d6d6d6;
+}
+.logo {
+  width: 60px;
+}
+.dashboardContainer {
+  background-color: white;
+
+  display: grid;
+  grid-template-columns: 5% 20% auto;
+  column-gap: 5px;
+}
+.sideTab input {
+  width: 100%;
+  background-color: #f8fafb;
+  border: 1px solid #d6d6d6;
+}

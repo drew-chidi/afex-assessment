@@ -2,10 +2,13 @@ import React from "react";
 import WelcomeLinks from "./WelcomeLinks";
 import classes from "./WelcomeContent.module.css";
 import Card from "./UI/Card";
+import CompanyLogo from "./CompanyLogo";
 
 const WelcomeContent = () => {
   return (
     <div className={classes.container}>
+      <CompanyLogo />
+
       <WelcomeLinks
         title='Sign in to ComX'
         description='Welcome to ComX'

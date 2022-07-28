@@ -6,10 +6,14 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import AuthHeader from "./AuthHeader";
 import Card from "../UI/Card";
+import classes from "./ForgetPassword.module.css";
+import CompanyLogo from "../CompanyLogo";
 
 const ForgetPasswordContent = () => {
   return (
     <div>
+      <CompanyLogo />
+
       <Card>
         <AuthHeader
           title='Password Reset'
@@ -32,29 +36,34 @@ const ForgetPasswordContent = () => {
           }}
         >
           <Form>
-            <div>
+            <div className={classes.formContainer}>
               <div>
                 <AuthInput
-                  label='Enter the Email Address you registered with'
+                  label='Enter the 4-digit code that was sent to my@email.com'
                   name='email'
                   type='text'
-                  placeholder='Enter your email'
+                  placeholder='Enter code'
                 />
-                <p>
-                  Note that you'll be sent an OTP to the email address provided
-                </p>
-                <p>Resend Code</p>
-                <div>
-                  <p>OTP code is invalid</p>
-                  <p>X</p>
+                <div className={classes.note}>
+                  <p>
+                    Note that you'll be sent an OTP to the email address
+                    provided
+                  </p>
+                  <p>Resend Code</p>
+                </div>
+                <div className={classes.errorBox}>
+                  <div className={classes.otpError}>
+                    <p>OTP code is invalid</p>
+                    <button>X</button>
+                  </div>
                 </div>
               </div>
-              <div className=''>
-                <button className=''>
-                  <NavLink to='/signup-details'>BACK</NavLink>
+              <div className={classes.buttonGroup}>
+                <button className={classes.goBack}>
+                  <NavLink to='/signin'>BACK</NavLink>
                 </button>
-                <button className='' type='submit'>
-                  <NavLink to='/complete'>PROCEED</NavLink>
+                <button className={classes.proceed} type='submit'>
+                  <NavLink to='/complete'>FINISH</NavLink>
                 </button>
               </div>
             </div>

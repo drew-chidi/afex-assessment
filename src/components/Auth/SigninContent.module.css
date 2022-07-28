@@ -1,0 +1,46 @@
+.container {
+}
+.rememberMe {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin: 30px 0;
+}
+.rememberMe .check {
+  line-height: 16.41px;
+}
+.rememberMe a {
+  color: #d71e0e;
+}
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+}
+.signin {
+  height: 46px;
+  background: #52965e;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+.signin a {
+  color: white;
+  font-weight: 700;
+}
+.goBack {
+  height: 46px;
+  background: #f8fafb;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+.goBack a {
+  color: black;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 29px;
+  }
+  /* .container h1 {
+    font-size: 1.875rem;
+  } */
+}

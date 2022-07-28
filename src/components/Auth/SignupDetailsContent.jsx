@@ -9,8 +9,9 @@ import Card from "../UI/Card";
 import AuthHeader from "./AuthHeader";
 import AuthInput from "./AuthInput";
 import classes from "./SignupDetails.module.css";
+import CompanyLogo from "../CompanyLogo";
 
-const SignupDetailsContent = ({ id, data }) => {
+const SignupDetailsContent = ({ id, onAuthenticate }) => {
   const [value, setValue] = useState();
 
   const navigate = useNavigate();
@@ -18,14 +19,15 @@ const SignupDetailsContent = ({ id, data }) => {
 
   // Validating Form Values
 
-  const handleChange = () => {
-    ref.current.setFieldValue("phone");
-  };
+  // const handleChange = () => {
+  //   ref.current.setFieldValue("phone");
+  // };
 
   // const phoneRegExp =
   //   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   return (
     <div className={classes.detailsContainer}>
+      <CompanyLogo />
       <Card>
         <div>
           <AuthHeader
@@ -35,13 +37,12 @@ const SignupDetailsContent = ({ id, data }) => {
 
           <Formik
             initialValues={{
-              email: "",
+              companyEmail: "",
               password: "",
               confirmPassword: "",
             }}
-            innerRef={ref}
             validationSchema={Yup.object({
-              email: !id
+              companyEmail: !id
                 ? Yup.string()
                     .email("Invalid email address")
                     .required("This field is required")
@@ -58,13 +59,12 @@ const SignupDetailsContent = ({ id, data }) => {
               confirmPassword: Yup.string()
                 .oneOf([Yup.ref("password"), null], "Passwords must match")
                 .required("Required"),
-              // phone: Yup.string().required("Required"),
-              // .matches(phoneRegExp, "Phone number is not valid"),
             })}
             onSubmit={(values) => {
               values.phone = value;
               console.log("phone", typeof value);
               console.log("omo", values);
+              onAuthenticate(values);
               setTimeout(() => {
                 console.log("omo", values);
                 alert(JSON.stringify(values, null, 2));
@@ -79,7 +79,7 @@ const SignupDetailsContent = ({ id, data }) => {
                     {!id && (
                       <AuthInput
                         label='Company Email'
-                        name='email'
+                        name='companyEmail'
                         type='email'
                         placeholder='Enter email'
                       />

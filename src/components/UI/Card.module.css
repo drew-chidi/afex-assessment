@@ -1,13 +1,13 @@
 .cardContainer {
-  background-color: #e5e5e5;
-  padding: 56px;
+  background-color: #e8ecef;
+  padding: 22px;
 }
 
 .cardBox {
   background-color: white;
   padding: 10px;
-  /* width: 100%; */
-  margin-bottom: 71px;
+  margin-bottom: 45px;
+  border-radius: 4px;
 }
 
 @media (min-width: 425px) {

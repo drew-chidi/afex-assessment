@@ -4,6 +4,7 @@
 .buttonGroup {
   display: flex;
   justify-content: space-between;
+  font-weight: 500;
 }
 button {
   background-color: transparent;
@@ -11,9 +12,17 @@ button {
 .buttonGroup a {
   background-color: transparent;
 }
-.backButton a {
+.backButton {
   color: black;
 }
-.finishButton a {
+.finishButton {
   color: #d71e0e;
+}
+.resendButton {
+  margin: 0 0 71px 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 21px;
+  color: #98a9bc;
+  opacity: 0.8;
 }

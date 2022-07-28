@@ -18,9 +18,21 @@
   color: white;
   background-color: green;
 }
-.signupButton {
+.signinButton a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+.signupButton a {
   color: white;
   background-color: black;
+}
+.signupButton a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
 }
 @media (min-width: 768px) {
   .linkContainer button {

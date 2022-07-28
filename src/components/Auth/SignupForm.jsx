@@ -8,14 +8,16 @@ import AuthInput from "./AuthInput";
 import classes from "./SignupForm.module.css";
 import AuthSelect from "./AuthSelect";
 import { AuthContext } from "../../store/auth-context";
+import "./Datepicker.css";
 
 const SignupForm = ({ id }) => {
   const [data, setData] = useState();
   const [startDate, setStartDate] = useState(new Date());
 
   const authCtx = useContext(AuthContext);
+  let _id = id;
 
-  console.log(data);
+  // console.log(data);
   const navigate = useNavigate();
   return (
     <>
@@ -24,8 +26,7 @@ const SignupForm = ({ id }) => {
           firstName: "",
           lastName: "",
           email: "",
-          acceptedTerms: false, // added for our checkbox
-          jobType: "", // added for our select
+          typeOfBusiness: "", // added for our select
         }}
         validationSchema={Yup.object({
           firstName: Yup.string()
@@ -38,10 +39,8 @@ const SignupForm = ({ id }) => {
           email: Yup.string()
             .email("Invalid email address")
             .required("This field is required"),
-          acceptedTerms: Yup.boolean()
-            .required("This field is required")
-            .oneOf([true], "You must accept the terms and conditions."),
-          jobType: Yup.string()
+
+          typeOfBusiness: Yup.string()
             .oneOf(
               ["designer", "development", "product", "other"],
               "Invalid Job Type"
@@ -49,18 +48,20 @@ const SignupForm = ({ id }) => {
             .required("This field is required"),
         })}
         onSubmit={(values, { setSubmitting }) => {
-          // setData(values);
-          // console.log(data);
+          // Add the id props to differentiate between individual and corporate
+          values.id = _id;
           authCtx.updateDetails(values);
+          console.log({ ...values });
 
-          // navigate("/signup-details", {
-          //   state: {
-          //     id: id,
-          //     data: values,
-          //   },
-          // });
+          navigate("/signup-details", {
+            state: {
+              id: id,
+              data: values,
+            },
+          });
           setTimeout(() => {
             setData(values);
+            console.log("check", id);
 
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
@@ -116,20 +117,13 @@ const SignupForm = ({ id }) => {
                   placeholder='Enter your Company Name'
                 />
                 <div className={classes.nameGroup}>
-                  <AuthSelect label='Type of Business' name='jobType'>
+                  <AuthSelect label='Type of Business' name='typeOfBusiness'>
                     <option value=''>Select Type of Business</option>
                     <option value='designer'>Designer</option>
                     <option value='development'>Developer</option>
                     <option value='product'>Product Manager</option>
                     <option value='other'>Other</option>
                   </AuthSelect>
-                  {/* 
-                  <AuthInput
-                    label='Date of Incorporation'
-                    name='email'
-                    type='email'
-                    placeholder='Enter your Email'
-                  /> */}
                   <div className={classes.dateBox}>
                     <label>Date of Incorporation</label>
                     <DatePicker

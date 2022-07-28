@@ -1,35 +1,35 @@
 import axios from "axios";
+import { date } from "yup";
 import { url } from "./url";
 
 // Register
-export async function signupIndividual({}) {
+export async function signupIndividual({ data }) {
   const response = await axios.post(`${url}register`, {
-    email,
-    password,
-    first_name,
-    last_name: "test",
+    email: data.email,
+    password: data.password,
+    first_name: data.firstName,
+    last_name: data.lastName,
     auth_type: "password",
-    password,
-    referral_code,
-    phone,
-    occupation,
-    Farmer,
+    referral_code: "",
+    phone: data.phone,
+    occupation: "Farmer",
   });
+  console.log("response");
   return response;
 }
 
-export async function signupCorporate({}) {
+export async function signupCorporate({ data }) {
   const response = await axios.post(`${url}`, {
-    email,
-    password,
-    date_of_incorporation,
-    company_name,
-    company_website,
-    nature_of_business,
-    auth_type,
-    rc_number,
-    referral_code,
-    company_phone,
+    email: data.compantEmail,
+    password: data.password,
+    date_of_incorporation: data.date_of_incorporation,
+    company_name: data.company_name,
+    company_website: data.company_website,
+    nature_of_business: data.type_of_business,
+    auth_type: "password",
+    rc_number: "3245463454",
+    referral_code: "",
+    company_phone: "+234905654999",
   });
   return response;
 }
@@ -70,18 +70,19 @@ export async function passwordChange({ email, new_password }) {
   return response;
 }
 
-//  Validate OTP
-export async function validateOtp({ email }) {
+//  Resend OTP
+export async function resendOtp({ email }) {
   const response = await axios.post(`${url}otp/resend`, {
     email,
   });
   return response;
 }
 
-//  OTP Resend
-export async function validateOtp({ token, otp }) {
-  const response = await axios.post(`${url}password-change`, {
-    otp,
+//  Validate OTP
+export async function validateOtp({ otp }) {
+  const response = await axios.post(`${url}otp/validate`, {
+    otp: otp,
   });
+  console.log("otp", response);
   return response;
 }

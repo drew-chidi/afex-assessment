@@ -1,0 +1,11 @@
+.linkBox {
+  display: flex;
+  column-gap: 5px;
+  margin-bottom: 5px;
+}
+.linkBox h5 {
+  font-size: 1.4em;
+  border-radius: 15px;
+  background: red;
+  padding: 2px;
+}

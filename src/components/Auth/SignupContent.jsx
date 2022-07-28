@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Card from "../UI/Card";
 import AuthHeader from "./AuthHeader";
 import SignupForm from "./SignupForm";
 import classes from "./SignupContent.module.css";
+import { AuthContext } from "../../store/auth-context";
+import CompanyLogo from "../CompanyLogo";
 
 const SignupContent = () => {
   const [selectForm, setSelectForm] = useState(true);
-
+  const authCtx = useContext(AuthContext);
   // Button Styles
   let individualButton;
   let corporateButton;
@@ -23,6 +25,7 @@ const SignupContent = () => {
   }
   return (
     <div className={classes.container}>
+      <CompanyLogo />
       <Card>
         <AuthHeader
           title='Register new account'
