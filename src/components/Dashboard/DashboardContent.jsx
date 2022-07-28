@@ -4,6 +4,16 @@ import classes from "./DashboardContent.module.css";
 import Market from "./Market/Market";
 import Product from "./Product";
 import logo from "../../assets/Rectangle.png";
+import {
+  AiOutlineRise,
+  AiOutlineFieldTime,
+  AiOutlineEye,
+  AiOutlineCheckCircle,
+  AiOutlineFile,
+} from "react-icons/ai";
+import { FiBook, FiSettings } from "react-icons/fi";
+import { MdOutlineCancel, MdOutlinePeopleAlt } from "react-icons/md";
+import { BsColumnsGap, BsBag } from "react-icons/bs";
 
 const DashboardContent = () => {
   return (
@@ -33,57 +43,79 @@ const DashboardContent = () => {
         </div>
       </header>
       <div className={classes.dashboardContainer}>
-        <div>
-          <div>
-            <button>Icon 1</button>
+        <div className={classes.sideTrayColumn}>
+          <div className={classes.sideTray}>
+            <button>
+              <BsColumnsGap />
+            </button>
             <p>Overview</p>
           </div>
-          <div>
-            <button>Icon 2</button>
+          <div className={classes.sideTray}>
+            <button>
+              <AiOutlineRise />
+            </button>
             <p>Market</p>
           </div>
-          <div>
-            <button>Icon 3</button>
+          <div className={classes.sideTray}>
+            <button>
+              <BsBag />
+            </button>
             <p>Portfolio</p>
           </div>
-          <div>
-            <button>Icon 4</button>
+          <div className={classes.sideTray}>
+            <button>
+              <MdOutlinePeopleAlt />
+            </button>
             <p>Community</p>
           </div>
-          <div>
-            <button>Icon 5</button>
+          <div className={classes.sideTray}>
+            <button>
+              <AiOutlineFile />
+            </button>
             <p>Requests</p>
           </div>
-          <div>
-            <button>Icon 6</button>
+          <div className={classes.sideTray}>
+            <button>
+              <FiSettings />
+            </button>
             <p>Settings</p>
           </div>
         </div>
         <div className={classes.sideTab}>
           <input type='text' placeholder='search' />
           <div>
-            <div>
-              <div>Icon Here</div>
+            <div className={classes.sidetabLinks}>
+              <AiOutlineRise />
               <button>Product View</button>
             </div>
-            <div>
-              <div>Icon Here</div>
+            <div className={classes.sidetabLinks}>
+              <div>
+                <FiBook />
+              </div>
               <button>Order Book</button>
             </div>
-            <div>
-              <div>Icon Here</div>
+            <div className={classes.sidetabLinks}>
+              <div>
+                <AiOutlineFieldTime />
+              </div>
               <button>Price History</button>
             </div>
-            <div>
-              <div>Icon Here</div>
+            <div className={classes.sidetabLinks}>
+              <div>
+                <AiOutlineEye />
+              </div>
               <button>Open orders</button>
             </div>
-            <div>
-              <div>Icon Here</div>
+            <div className={classes.sidetabLinks}>
+              <div>
+                <AiOutlineCheckCircle />
+              </div>
               <button>Closed trades</button>
             </div>
-            <div>
-              <div>Icon Here</div>
+            <div className={classes.sidetabLinks}>
+              <div>
+                <MdOutlineCancel />
+              </div>
               <button>Cancel Trades</button>
             </div>
           </div>
@@ -95,11 +127,13 @@ const DashboardContent = () => {
           <div>
             <Product />
           </div>
-          <Market />
+          <div>
+            <Market />
+          </div>
         </div>
       </div>
-      <footer>
-        <div>Live Market</div>
+      <footer className={classes.footerBox}>
+        <p>Live Market</p>
       </footer>
     </div>
   );

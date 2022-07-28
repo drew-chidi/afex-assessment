@@ -8,46 +8,85 @@ import {
 
 const defaultData = [
   {
-    firstName: "tanner",
-    lastName: "linsley",
-    age: 24,
-    visits: 100,
-    status: "In Relationship",
-    progress: 50,
+    security: "tanner",
+    Board: "linsley",
+    order: 24,
+    matched: 100,
+    quantity: "In Relationship",
+    date: 50,
+    time: 50,
   },
   {
-    firstName: "tandy",
-    lastName: "miller",
-    age: 40,
-    visits: 40,
-    status: "Single",
-    progress: 80,
+    security: "tanner",
+    Board: "linsley",
+    order: 24,
+    matched: 100,
+    quantity: "In Relationship",
+    date: 50,
+    time: 50,
   },
   {
-    firstName: "joe",
-    lastName: "dirte",
-    age: 45,
-    visits: 20,
-    status: "Complicated",
-    progress: 10,
+    security: "tanner",
+    Board: "linsley",
+    order: 24,
+    matched: 100,
+    quantity: "In Relationship",
+    date: 50,
+    time: 50,
+  },
+  {
+    security: "tanner",
+    Board: "linsley",
+    order: 24,
+    matched: 100,
+    quantity: "In Relationship",
+    date: 50,
+    time: 50,
+  },
+  {
+    security: "tanner",
+    Board: "linsley",
+    order: 24,
+    matched: 100,
+    quantity: "In Relationship",
+    date: 50,
+    time: 50,
+  },
+  {
+    security: "tandy",
+    Board: "miller",
+    order: 40,
+    matched: 40,
+    quantity: "Single",
+    date: 80,
+    time: 50,
+  },
+  {
+    security: "joe",
+    Board: "dirte",
+    order: 45,
+    matched: 20,
+    quantity: "Complicated",
+    date: 10,
+    time: 50,
   },
 ];
 
 const columnHelper = createColumnHelper();
 
 const columns = [
-  columnHelper.accessor("firstName", {
+  columnHelper.accessor("security", {
     cell: (info) => info.getValue(),
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor((row) => row.lastName, {
-    id: "lastName",
+  columnHelper.accessor((row) => row.Board, {
+    id: "board",
     cell: (info) => <i>{info.getValue()}</i>,
     header: () => <span>Last Name</span>,
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor("age", {
-    header: () => "Age",
+  columnHelper.accessor("order", {
+    header: () => "order",
     cell: (info) => info.renderValue(),
     footer: (info) => info.column.id,
   }),
@@ -55,12 +94,12 @@ const columns = [
     header: () => <span>Visits</span>,
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor("status", {
-    header: "Status",
+  columnHelper.accessor("quantity", {
+    header: "quantity",
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor("progress", {
-    header: "Profile Progress",
+  columnHelper.accessor("date", {
+    header: "Profile date",
     footer: (info) => info.column.id,
   }),
 ];

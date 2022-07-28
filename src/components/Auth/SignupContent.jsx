@@ -1,15 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Card from "../UI/Card";
 import AuthHeader from "./AuthHeader";
 import SignupForm from "./SignupForm";
 import classes from "./SignupContent.module.css";
-import { AuthContext } from "../../store/auth-context";
 import CompanyLogo from "../CompanyLogo";
 
 const SignupContent = () => {
   const [selectForm, setSelectForm] = useState(true);
-  const authCtx = useContext(AuthContext);
-  // Button Styles
+
+  // Button Styles for Corporate and Individual Accounts Registration
   let individualButton;
   let corporateButton;
   if (!selectForm) {
@@ -19,6 +18,8 @@ const SignupContent = () => {
     corporateButton = `${classes.button}`;
   }
   if (selectForm) {
+    console.log(selectForm);
+
     individualButton = `${classes.button} ${classes.active}`;
   } else {
     individualButton = `${classes.button}`;

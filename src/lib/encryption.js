@@ -2,10 +2,10 @@ import crypto from "crypto";
 export default class Manager {
   constructor({ key: t, vector: r }) {
     this.encrypt = (e) => {
-      return do_encrypt_data(e, t, r);
+      do_encrypt_data(e, t, r);
     };
     this.decrypt = (e) => {
-      return do_decrypt_data(e, t, r);
+      do_decrypt_data(e, t, r);
     };
   }
 }
@@ -31,7 +31,7 @@ function do_encrypt_data(t, r, e) {
 }
 function do_decrypt_data(t, r, e) {
   function a(t) {
-    if ("string" == typeof t && 0 === t.trim().length) return t;
+    if ("string" == typeof t && t.trim().length) return t;
     try {
       let a = crypto.createDecipheriv("aes-256-cbc", r, e);
       return Buffer.concat([

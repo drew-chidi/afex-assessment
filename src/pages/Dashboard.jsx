@@ -1,15 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import DashboardContent from "../components/Dashboard/DashboardContent";
-import io from "socket.io-client";
-import {
-  getLivePrice,
-  securitiesBoards,
-} from "../components/util/dashboard-api";
+
+// import io from "socket.io-client";
+// import {
+//   getLivePrice,
+//   securitiesBoards,
+// } from "../components/util/dashboard-api";
 import { AuthContext } from "../store/auth-context";
 // const socket = io.connect("wss://comx-sand-api.afexnigeria.com/stream/trades");
 
 const Dashboard = () => {
-  const [orderBook, setOrderBook] = useState;
+  // const [orderBook, setOrderBook] = useState;
   const authCtx = useContext(AuthContext);
   const token = authCtx.token;
 

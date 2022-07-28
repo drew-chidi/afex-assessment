@@ -15,6 +15,8 @@ const Market = () => {
         </div>
       </section>
       <div className={classes.tradelogSection}>
+        <p>TRADE LOG</p>
+
         <TradeLog />
       </div>
     </div>

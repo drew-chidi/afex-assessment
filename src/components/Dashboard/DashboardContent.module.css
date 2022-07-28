@@ -2,7 +2,8 @@
   /* background-color: white; */
   display: grid;
   /* grid-template-columns: 40px 50px auto; */
-  grid-template-rows: 10% auto 10px;
+  grid-template-rows: 10% 80% 52px;
+  min-height: 100vh;
 }
 .headerBox {
   background-color: white;
@@ -22,13 +23,39 @@
 }
 .dashboardContainer {
   background-color: white;
-
   display: grid;
-  grid-template-columns: 5% 20% auto;
+  grid-template-columns: 5% 10% auto;
   column-gap: 5px;
 }
 .sideTab input {
   width: 100%;
   background-color: #f8fafb;
   border: 1px solid #d6d6d6;
+}
+.sidetabLinks {
+  display: flex;
+  column-gap: 5px;
+  /* flex-direction: column; */
+}
+.sideTray {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.sideTrayColumn {
+  margin-top: 18px;
+}
+.footerBox {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footerBox p {
+  display: inline-block;
+  margin: auto 0;
+  height: 100%;
+  background-color: black;
+  color: white;
+  width: 164px;
 }

@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import "react-phone-number-input/style.css";
@@ -13,16 +12,9 @@ import CompanyLogo from "../CompanyLogo";
 
 const SignupDetailsContent = ({ id, onAuthenticate }) => {
   const [value, setValue] = useState();
-
   const navigate = useNavigate();
-  const ref = useRef();
 
-  // Validating Form Values
-
-  // const handleChange = () => {
-  //   ref.current.setFieldValue("phone");
-  // };
-
+  // Validating Phone Number
   // const phoneRegExp =
   //   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   return (
@@ -47,12 +39,6 @@ const SignupDetailsContent = ({ id, onAuthenticate }) => {
                     .email("Invalid email address")
                     .required("This field is required")
                 : Yup.string(),
-              // email: Yup.string().when(id, {
-              //   is: (id) => id === false,
-              //   then: Yup.string().required(
-              //     "I am required now the checkbox is checked"
-              //   ),
-              // }),
               password: Yup.string()
                 .min(4, "Must not be less than 4 characters")
                 .required("This field is required"),
@@ -62,60 +48,55 @@ const SignupDetailsContent = ({ id, onAuthenticate }) => {
             })}
             onSubmit={(values) => {
               values.phone = value;
-              console.log("phone", typeof value);
-              console.log("omo", values);
               onAuthenticate(values);
               setTimeout(() => {
-                console.log("omo", values);
-                alert(JSON.stringify(values, null, 2));
+                // alert(JSON.stringify(values, null, 2));
                 navigate("/verifyaccount");
               }, 400);
             }}
           >
-            {({ values, setFieldValue }) => (
-              <Form>
-                <div className={classes.individualGroup}>
-                  <div className={classes.nameGroup}>
-                    {!id && (
-                      <AuthInput
-                        label='Company Email'
-                        name='companyEmail'
-                        type='email'
-                        placeholder='Enter email'
+            <Form>
+              <div className={classes.individualGroup}>
+                <div className={classes.nameGroup}>
+                  {!id && (
+                    <AuthInput
+                      label='Company Email'
+                      name='companyEmail'
+                      type='email'
+                      placeholder='Enter email'
+                    />
+                  )}
+                  <AuthInput
+                    label='Password'
+                    name='password'
+                    type='password'
+                    placeholder='Enter your password'
+                  />
+                  <AuthInput
+                    label='Confirm Password'
+                    name='confirmPassword'
+                    type='password'
+                    placeholder='Confirm Password'
+                  />
+                  {id && (
+                    <div className={classes.phoneGroup}>
+                      <label>Phone Number</label>
+                      <PhoneInput
+                        name='phone'
+                        type='text'
+                        placeholder='Enter phone number'
+                        value={value}
+                        onChange={setValue}
+                        className={classes.phoneInput}
                       />
-                    )}
-                    <AuthInput
-                      label='Password'
-                      name='password'
-                      type='password'
-                      placeholder='Enter your password'
-                    />
-                    <AuthInput
-                      label='Confirm Password'
-                      name='confirmPassword'
-                      type='password'
-                      placeholder='Confirm Password'
-                    />
-                    {id && (
-                      <div className={classes.phoneGroup}>
-                        <label>Phone Number</label>
-                        <PhoneInput
-                          name='phone'
-                          type='text'
-                          placeholder='Enter phone number'
-                          value={value}
-                          onChange={setValue}
-                          className={classes.phoneInput}
-                        />
-                      </div>
-                    )}
-                  </div>
-                  <button className={classes.formButton} type='submit'>
-                    VERIFY ACCOUNT
-                  </button>
+                    </div>
+                  )}
                 </div>
-              </Form>
-            )}
+                <button className={classes.formButton} type='submit'>
+                  VERIFY ACCOUNT
+                </button>
+              </div>
+            </Form>
           </Formik>
         </div>
       </Card>

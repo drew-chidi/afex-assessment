@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import AuthInput from "./AuthInput";
@@ -10,7 +9,8 @@ import classes from "./SigninContent.module.css";
 import AuthHeader from "./AuthHeader";
 import CompanyLogo from "../CompanyLogo";
 
-const SigninContent = () => {
+const SigninContent = ({ onAuthenticate }) => {
+  const navigate = useNavigate();
   return (
     <div className={classes.container}>
       <CompanyLogo />
@@ -21,37 +21,23 @@ const SigninContent = () => {
         />
         <Formik
           initialValues={{
-            firstName: "",
-            lastName: "",
             email: "",
+            password: "",
             rememberMe: false, // added for our checkbox
-            jobType: "", // added for our select
           }}
           validationSchema={Yup.object({
-            firstName: Yup.string()
-              .max(15, "Must be 15 characters or less")
-              .required("Required"),
-            lastName: Yup.string()
-              .max(20, "Must be 20 characters or less")
-              .required("Required"),
             email: Yup.string()
               .email("Invalid email address")
               .required("Required"),
-            acceptedTerms: Yup.boolean()
-              .required("Required")
-              .oneOf([true], "You must accept the terms and conditions."),
-            jobType: Yup.string()
-              .oneOf(
-                ["designer", "development", "product", "other"],
-                "Invalid Job Type"
-              )
+            password: Yup.string()
+              .min(4, "Password should be at least 4 characters")
               .required("Required"),
+            rememberMe: Yup.boolean(),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+            onAuthenticate({ values });
+            navigate("/dashboard");
+            setSubmitting(false);
           }}
         >
           <Form>
@@ -80,7 +66,7 @@ const SigninContent = () => {
               </div>
               <div className={classes.buttonGroup}>
                 <button className={classes.signin} type='submit'>
-                  <NavLink to='/dashboard'>Sign in</NavLink>
+                  Sign in
                 </button>
                 <button className={classes.goBack}>
                   <NavLink to='/'>Back</NavLink>
