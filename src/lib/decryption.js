@@ -9,8 +9,8 @@ const aesCBC = new aesjs.ModeOfOperation.cbc(
 
 // var encryptedBytes = aesCBC.encrypt(textBytes);
 
-function encryptObjectValues(obj) {
-  return Object.fromEntries(
+function decryptObjectValues(obj) {
+  return Object.toEntries(
     Object.entries(obj).map(([key, value]) => [
       key,
       aesCBC.encrypt(aesjs.utils.utf8.toBytes(value)),
@@ -18,5 +18,5 @@ function encryptObjectValues(obj) {
   );
 }
 
-// console.log(encryptObjectValues(values))
-export default encryptObjectValues;
+// console.log(decryptObjectValues(values))
+export default decryptObjectValues;

@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Manager from "../../lib/encryption.js";
+
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import DatePicker from "react-datepicker";
@@ -10,6 +12,10 @@ import AuthSelect from "./AuthSelect";
 import { AuthContext } from "../../store/auth-context";
 import "./Datepicker.css";
 
+// const manager = new Manager({
+//   key: process.env.KEY,
+//   vector: process.env.VECTOR,
+// });
 const SignupForm = ({ id }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [fDate, setfDate] = useState("");
@@ -72,14 +78,12 @@ const SignupForm = ({ id }) => {
           values["id"] = id;
 
           values["date_of_incorporation"] = fDate;
+          // manager.encrypt(values);
+          console.log(values);
           authCtx.updateDetails(values);
-          console.log({ ...values });
+          // console.log({ ...values });
 
           navigate("/signup-details");
-          // setTimeout(() => {
-          //   alert(JSON.stringify(values, null, 2));
-          //   setSubmitting(false);
-          // }, 400);
         }}
       >
         {({ values }) => (

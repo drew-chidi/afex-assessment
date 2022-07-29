@@ -1,14 +1,16 @@
 import React, { useContext, useState } from "react";
-import Manager from "../lib/encryption.js";
+// import Manager from "../lib/encryption.js";
 import SignupDetailsContent from "../components/Auth/SignupDetailsContent";
 import { signupCorporate, signupIndividual } from "../components/util/auth-api";
 import { AuthContext } from "../store/auth-context";
 import Loader from "../components/UI/Loader.jsx";
+import encryptObjectValues from "../lib/encryption";
+import decryptObjectValues from "../lib/decryption";
 
-const manager = new Manager({
-  key: process.env.KEY,
-  vector: process.env.VECTOR,
-});
+// const manager = new Manager({
+//   key: process.env.KEY,
+//   vector: process.env.VECTOR,
+// });
 
 const SignupDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,13 +31,17 @@ const SignupDetails = () => {
     authCtx.updateDetails(data);
 
     data = { data };
-    manager.encrypt(data);
+    encryptObjectValues(data);
+    // manager.encrypt(data);
 
-    console.log("details", typeof data);
+    console.log("details", encryptObjectValues(data));
     if (id) {
       try {
         const response = await signupIndividual({ data });
-        manager.decrypt(response); // impure decryption
+        decryptObjectValues(data);
+        console.log("details", decryptObjectValues(data));
+        return response;
+        // manager.decrypt(response); // impure decryption
       } catch (error) {
         alert(error.message);
       }
@@ -44,7 +50,11 @@ const SignupDetails = () => {
     if (!id) {
       try {
         const response = await signupCorporate({ data });
-        manager.decrypt(response); // impure decryption
+        decryptObjectValues(data);
+        console.log("details", decryptObjectValues(data));
+        return response;
+
+        // manager.decrypt(response); // impure decryption
       } catch (error) {
         alert(error.message);
       }

@@ -1,15 +1,8 @@
 import axios from "axios";
 import { url } from "./url";
-import Manager from "../../lib/encryption";
-
-const manager = new Manager({
-  key: process.env.KEY,
-  vector: process.env.VECTOR,
-});
 
 // Register
 export async function signupIndividual({ data }) {
-  manager.encrypt(data);
   const response = await axios.post(`${url}register`, {
     email: data.email,
     password: data.password,
@@ -20,8 +13,6 @@ export async function signupIndividual({ data }) {
     phone: data.phone,
     occupation: "Farmer",
   });
-  console.log("response");
-  manager.decrypt(response); // impure decryption
 
   return response;
 }
