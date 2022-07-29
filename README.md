@@ -90,7 +90,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [https://www.alchemy.com/blog/how-to-polyfill-node-core-modules-in-webpack-5](https://www.example.com) - I got an error from webpack after I intoduced encryption into my HTTP calls. Until the latest update to webpack version, webpack < 5 used to include NodeJS polyfills by default. Because the current version of webpack no longer includes NodeJS polyfills by default, it is causing issues for developers that use create-react-app with webpack > 5 to build applications with the web3.js and alchemyweb3.js library or other encryption library.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
