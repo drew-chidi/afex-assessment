@@ -9,6 +9,7 @@ import classes from "./VerifyAccountContent.module.css";
 import { resendOtp, validateOtp } from "../util/auth-api";
 import { AuthContext } from "../../store/auth-context";
 import CompanyLogo from "../CompanyLogo";
+import ProgressStep from "../UI/ProgressStep";
 
 const VerifyAccountContent = () => {
   const navigate = useNavigate("/complete");
@@ -89,6 +90,7 @@ const VerifyAccountContent = () => {
           </Form>
         </Formik>
       </Card>
+      <ProgressStep value='3' />
     </div>
   );
 };

@@ -52,9 +52,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - [react-datepicker](https://reactdatepicker.com/) - date input library for React
 - [react-phone-number-input](https://www.npmjs.com/package/react-phone-number-input) - Phone number input library for React
 - [Formik](https://formik.org/docs/overview) - React Library that helps you handle form in a cleaner way
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [react-step-progress-bar](https://styled-components.com/) - For the authentication progress steps indicator
 
 ### What I learned
 

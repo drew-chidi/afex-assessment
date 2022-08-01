@@ -68,7 +68,7 @@ const SigninContent = ({ onAuthenticate }) => {
                 <button className={classes.signin} type='submit'>
                   Sign in
                 </button>
-                <button className={classes.goBack}>
+                <button className={classes.goBack} type='button'>
                   <NavLink to='/'>Back</NavLink>
                 </button>
               </div>

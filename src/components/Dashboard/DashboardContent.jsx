@@ -1,8 +1,8 @@
 import React from "react";
-import Board from "./Board";
+import Board from "./BoardTab";
 import classes from "./DashboardContent.module.css";
 import Market from "./Market/Market";
-import Product from "./Product";
+// import Product from "./Product";
 import logo from "../../assets/Rectangle.png";
 import {
   AiOutlineRise,
@@ -14,6 +14,8 @@ import {
 import { FiBook, FiSettings } from "react-icons/fi";
 import { MdOutlineCancel, MdOutlinePeopleAlt } from "react-icons/md";
 import { BsColumnsGap, BsBag } from "react-icons/bs";
+import ProductTab from "./ProductTab";
+import BoardTab from "./BoardTab";
 
 const DashboardContent = () => {
   return (
@@ -122,10 +124,10 @@ const DashboardContent = () => {
         </div>
         <div>
           <div>
-            <Board />
+            <BoardTab />
           </div>
           <div>
-            <Product />
+            <ProductTab />
           </div>
           <div>
             <Market />
