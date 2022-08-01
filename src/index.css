@@ -8,9 +8,10 @@
 }
 html {
   font-family: "Roboto", sans-serif;
+  background-color: #e8ecef;
 }
 body {
-  background-color: #e8ecef;
+  background-color: #e8ecef !important;
 }
 html,
 body {
@@ -77,4 +78,19 @@ table {
 td {
   text-align: left;
   font-weight: normal;
+}
+
+/* Slider CSS */
+.css-17m87zz {
+  width: 70% !important;
+}
+@media (min-width: 425px) {
+  .css-17m87zz {
+    width: 40% !important;
+  }
+}
+@media (min-width: 768px) {
+  .css-17m87zz {
+    width: 33.3% !important;
+  }
 }
