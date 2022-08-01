@@ -9,6 +9,7 @@ import AuthHeader from "./AuthHeader";
 import AuthInput from "./AuthInput";
 import classes from "./SignupDetails.module.css";
 import CompanyLogo from "../CompanyLogo";
+import ProgressStep from "../UI/ProgressStep";
 
 const SignupDetailsContent = ({ id, onAuthenticate }) => {
   const [value, setValue] = useState();
@@ -100,6 +101,7 @@ const SignupDetailsContent = ({ id, onAuthenticate }) => {
           </Formik>
         </div>
       </Card>
+      <ProgressStep value='2' />
     </div>
   );
 };
