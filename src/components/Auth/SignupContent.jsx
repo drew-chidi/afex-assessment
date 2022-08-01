@@ -4,6 +4,7 @@ import AuthHeader from "./AuthHeader";
 import SignupForm from "./SignupForm";
 import classes from "./SignupContent.module.css";
 import CompanyLogo from "../CompanyLogo";
+import ProgressStep from "../UI/ProgressStep";
 
 const SignupContent = () => {
   const [selectForm, setSelectForm] = useState(true);
@@ -56,6 +57,7 @@ const SignupContent = () => {
           </div>
         </div>
       </Card>
+      <ProgressStep value='1' />
     </div>
   );
 };

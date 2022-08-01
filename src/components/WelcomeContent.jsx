@@ -8,7 +8,7 @@ const WelcomeContent = () => {
   return (
     <div className={classes.container}>
       <CompanyLogo />
-
+      <progress-steps id='my-steps'></progress-steps>
       <WelcomeLinks
         title='Sign in to ComX'
         description='Welcome to ComX'

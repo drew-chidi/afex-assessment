@@ -5,6 +5,7 @@ import AuthHeader from "./AuthHeader";
 import { AuthContext } from "../../store/auth-context";
 import check from "../../assets/check.png";
 import classes from "./RegistrationCompleteContent.module.css";
+import ProgressStep from "../UI/ProgressStep";
 
 const RegistrationCompleteContent = () => {
   const authCtx = useContext(AuthContext);
@@ -24,6 +25,7 @@ const RegistrationCompleteContent = () => {
           <NavLink to='/dashboard'>GO TO DASHBOARD</NavLink>
         </button>
       </Card>
+      <ProgressStep value='4' />
     </div>
   );
 };
