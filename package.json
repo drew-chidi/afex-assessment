@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.2.4",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@tanstack/react-table": "^8.5.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -11,22 +14,23 @@
     "axios": "^0.27.2",
     "crypto": "^1.0.1",
     "formik": "^2.2.9",
+    "framer-motion": "^6.5.1",
+    "progress-steps-webcomponent": "^1.0.3",
     "react": "^18.2.0",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-phone-number-input": "^3.2.5",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "react-step-progress-bar": "^1.0.3",
+    "react-scripts": "^5.0.1",
     "socket.io-client": "^4.5.1",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
