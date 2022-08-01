@@ -10,6 +10,9 @@
   column-gap: 5px;
   /* justify-content: flex-end; */
 }
+.productSection div {
+  flex: 50%;
+}
 /* .tradeLogSection {
   display: block;
   text-align: justify;

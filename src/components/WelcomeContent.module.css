@@ -1,5 +1,6 @@
 .container {
   margin: 30px 0;
+  background-color: #e8ecef;
 }
 
 @media (min-width: 768px) {

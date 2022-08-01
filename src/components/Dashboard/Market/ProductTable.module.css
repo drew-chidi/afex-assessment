@@ -1,0 +1,14 @@
+.head p {
+  text-align: left;
+}
+.bid {
+  display: flex;
+  justify-content: space-between;
+}
+.bid button {
+  border: 1px solid green;
+  width: 64px;
+  color: green;
+  font-weight: 700;
+  margin-left: 32px;
+}
